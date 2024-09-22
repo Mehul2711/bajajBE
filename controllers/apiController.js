@@ -1,8 +1,8 @@
-// POST: Logic to process JSON data
+
 const processRequest = (req, res) => {
   const { data, file_b64 } = req.body;
 
-  // Check if data is valid
+
   if (!Array.isArray(data)) {
     return res
       .status(400)
@@ -17,14 +17,14 @@ const processRequest = (req, res) => {
       .sort()
       .pop() || null;
 
-  // Fake file validation (as base64 wasn't sent in actual example)
+
   const fileValid = file_b64 ? true : false;
-  const fileMimeType = fileValid ? "application/octet-stream" : null; // Example mime type
-  const fileSizeKb = file_b64 ? (file_b64.length * 0.75) / 1024 : 0; // Estimate file size in KB
+  const fileMimeType = fileValid ? "application/octet-stream" : null; 
+  const fileSizeKb = file_b64 ? (file_b64.length * 0.75) / 1024 : 0; 
 
   const response = {
     is_success: true,
-    user_id: "MehulKumar_27112002", // Replace with actual format
+    user_id: "MehulKumar_27112002", 
     email: "mk3416@srmist.edu.in",
     roll_number: "RA2111033010155",
     numbers,
@@ -38,7 +38,7 @@ const processRequest = (req, res) => {
   return res.json(response);
 };
 
-// GET: Returns a hardcoded operation code
+
 const getOperationCode = (req, res) => {
   return res.status(200).json({ operation_code: 1 });
 };

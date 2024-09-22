@@ -6,10 +6,8 @@ const {
 
 const router = express.Router();
 
-// POST request handler
 router.post("/", processRequest);
 
-// GET request handler
 router.get("/", getOperationCode);
 
 module.exports = router;
